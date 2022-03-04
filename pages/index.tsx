@@ -4,6 +4,7 @@ import { Input } from "@chakra-ui/react";
 import styles from "../styles/Home.module.css";
 import DynamicText from "components/DynamicText";
 import { useRef } from "react";
+import AuthPage from "./AuthPage";
 
 const Home = () => {
   const dynamicTextRef = useRef<{ changeValue?: (value: string) => void }>();
@@ -20,8 +21,9 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-        <DynamicText ref={dynamicTextRef} />
-        <Input onChange={onChange} />
+        {/* <DynamicText ref={dynamicTextRef} />
+        <Input onChange={onChange} /> */}
+        <AuthPage/>
       </main>
     </div>
   );
