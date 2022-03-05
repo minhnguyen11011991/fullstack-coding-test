@@ -85,7 +85,7 @@ const BlogPage = () => {
       }
       {
         blogs.map(item => (
-          <Box className={styles.blog_item} maxW='400px' margin='10px' borderWidth='1px' borderRadius='lg' overflow='hidden' key={item.id}
+          <Box className={styles.blog_item} maxW='600px' margin='10px' borderWidth='1px' borderRadius='lg' overflow='hidden' key={item.id}
             onClick={onSelectBlog.bind(null, item)}>
             <Image src={item.photo} />
             <Box p='6'>
