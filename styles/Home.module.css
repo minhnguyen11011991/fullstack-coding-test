@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +14,35 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.blog {
+  min-height: 100vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.blog_item {
+  transition: .3s;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+.blog_item:hover {
+  transform: translateY(-5px);
+  filter: grayscale(0);
+}
+
+.blog_item h1 {
+  color: #152035;
+  transition: .3s;
+}
+
+.blog_item h1:hover {
+  color: #f08e80;
 }
 
 .footer {

@@ -10,12 +10,26 @@ const firebaseConfig = {
   messagingSenderId: "825132614012",
   appId: "1:825132614012:web:df865ee6ecdea5a10ce4f9"
 };
-
-if (!firebase.apps.length) {
+if (!firebase.apps.length)
+{
   firebase.initializeApp(firebaseConfig);
 }
-
 const app = firebase.app();
-const auth = firebase.auth();
-const db = firebase.firestore();
-export { auth, db, app };
+const auth = firebase.auth(app);
+const db = firebase.firestore(app);
+
+// Get a list of cities from your database
+async function getBlogs (db)
+{
+  const blogsCol = collection(db, 'blogs');
+  const blogSnapshot = await getDocs(blogsCol);
+  const blogList = blogSnapshot.docs.map(doc => doc.data());
+  return blogList;
+}
+
+export
+{
+  auth,
+  db,
+  getBlogs
+};
